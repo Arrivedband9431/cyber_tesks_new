@@ -45,8 +45,8 @@ logger.setLevel(logging.DEBUG)
 
 # ---- reading file -----
 file_object = open("f_read", "r")
-users_massage = file_object.read()
-users_massage = str(users_massage)
+users_message = file_object.read()
+users_message = str(users_message)
 result_file = open("file_result", "w")
 # -----------------------
 
@@ -85,10 +85,10 @@ def main():
     assert encrypt("this is a test") == "91,19,30,90,98,30,90,98,12,98,91,16,90,91,", "Encryption Failed"
     assert decrypt("91,19,30,90,98,30,90,98,12,98,91,16,90,91,") == "this is a test", "Decryption Failed"
     if option_chosen == "encrypt":
-        add_to_file = encrypt(users_massage)
+        add_to_file = encrypt(users_message)
         result_file.write(add_to_file)
     elif option_chosen == "decrypt":
-        add_to_file = decrypt(users_massage)
+        add_to_file = decrypt(users_message)
         result_file.write(add_to_file)
     else:
         logger.error("That is not an option!")
