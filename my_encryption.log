@@ -1,0 +1,21 @@
+2025-11-02 14:33:34,151 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:33:34,151 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:33:34,151 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:33:45,565 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:33:45,566 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:33:45,566 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:33:58,243 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:33:58,243 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:33:58,243 - INFO - successful message decrypt message: 
+2025-11-02 14:34:08,714 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:34:08,714 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:34:08,715 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:34:17,513 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:34:17,514 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:34:17,514 - INFO - successful message encrypted message: 
+2025-11-02 14:34:19,006 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:34:19,006 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:34:19,006 - INFO - successful message decrypt message: 
+2025-11-02 14:34:50,074 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,
+2025-11-02 14:34:50,074 - INFO - successful message decrypt message: this is a test
+2025-11-02 14:34:50,074 - INFO - successful message encrypted message: 91,19,30,90,98,30,90,98,12,98,91,16,90,91,

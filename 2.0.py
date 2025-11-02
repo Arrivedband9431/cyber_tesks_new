@@ -6,7 +6,7 @@ Author: yali sommer
 Program name: encryption/decrypt
 Description:
     options to either encrypt decrypt flip-encrypt or flip-decrypt
-Date: 2025-10-09
+Date: 2025-11-2
 '''
 
 ENCRYPTION_DICTIONARY = {
@@ -31,54 +31,32 @@ DECRYPT_DICTIONARY = {
     102: "!", 103: "-"
 }
 
-# ---- reading file -----
-read_File_name = 'f_read.txt'
+# ---- logging file -----
 logging.basicConfig(
     filename="my_encryption.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     filemode="a"
 )
-# -----------------------
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
+# -----------------------
 
-# '''
-# for nir how to run:
-#
-#
-#
-# step 1: open cmd
-#
-# step 2: mount the location of file in this case its the line below without the .
-# cd C:\Users\Your_Computers_name\PycharmProjects\Cyber
-#
-# step 3:  example of encrypting hello world
-# python task_1_final.py "Hello world" 1
-#
-# the numbers represent what action you are doing so:
-# 1 - encrypt
-# 2 - decrypt
-# 3 - flip-encrypt
-# 4 - flip-decrypt
-# 5 - auto tester
-# '''
 
+# ---- reading file -----
 file_object = open("f_read", "r")
 users_massage = file_object.read()
 users_massage = str(users_massage)
-
 result_file = open("file_result", "w")
+# -----------------------
+
 
 # -----------------------
 # argv code
-# if len(sys.argv) > 1:
-#     option_chosen = str(sys.argv[1])
-# else:
-#     option_chosen = 1
-# -----------------------
-# manual input
-option_chosen = input("encrypt or decrypt: \n")
+if len(sys.argv) > 1:
+    option_chosen = str(sys.argv[1])
+else:
+    option_chosen = 1
 # -----------------------
 
 
@@ -103,70 +81,17 @@ def decrypt(message):
     return message_in_letters
 
 
-# ----------------------------------------------------------------------------------
-
-
-def encrypt_flip(message):
-    encrypted = encrypt(message)
-    parts = encrypted.split(",")
-    clean_parts = []
-    for g in parts:
-        if g != "":
-            clean_parts.append(g)
-    flipped = ",".join(reversed(parts)) + ","
-    logger.info("successful flip-encrypt message: " + flipped)
-    return flipped
-
-
-def decrypt_flip(message):
-    parts = message.split(",")
-    clean_parts = []
-    for g in parts:
-        if g != "":
-            clean_parts.append(g)
-    flipped_parts = list(reversed(clean_parts))
-    flipped = ",".join(flipped_parts) + ","
-    logger.info("successful flip-dencrypt message: " + flipped)
-    return decrypt(flipped)
-
-
-# ----------------------------------------------------------------------------------
-
-
 def main():
     assert encrypt("this is a test") == "91,19,30,90,98,30,90,98,12,98,91,16,90,91,", "Encryption Failed"
     assert decrypt("91,19,30,90,98,30,90,98,12,98,91,16,90,91,") == "this is a test", "Decryption Failed"
-
-    # assert encrypt("this is a test") == "91,19,30,90,98,30,90,98,12,98,91,16,90,91,", "Encryption Failed"
-    # assert decrypt("91,19,30,90,98,30,90,98,12,98,91,16,90,91,") == "this is a test" , "Decryption Failed"
-    # flipped_expected = ",".join(reversed("91,19,30,90,98,30,90,98,12,98,91,16,90,91,".split(",")[:-1])) + ","
-    # assert encryptflip("this is a test") == flipped_expected, "Flip Encryption Failed"
-    # assert decryptflip(flipped_expected) == "this is a test", "Flip Decryption Failed"
-
     if option_chosen == "encrypt":
         add_to_file = encrypt(users_massage)
         result_file.write(add_to_file)
     elif option_chosen == "decrypt":
         add_to_file = decrypt(users_massage)
         result_file.write(add_to_file)
-    elif option_chosen == "f_encrypt":
-        add_to_file = encrypt_flip(users_massage)
-        result_file.write(add_to_file)
-
-    elif option_chosen == "f_decrypt":
-        add_to_file = decrypt_flip(users_massage)
-        result_file.write(add_to_file)
-
-    # elif option_chosen == "flipped_decryption":
-    #     print(encrypt_flip(users_massage))
-    # elif option_chosen == "flipped_encryption":
-    #     print(decrypt_flip(users_massage))
-
-    # elif option_chosen == "test":
-    #
-    #
-    # else:
-    #     logger.error("That is not an option!")
+    else:
+        logger.error("That is not an option!")
 
 
 if __name__ == "__main__":
